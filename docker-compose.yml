@@ -1,0 +1,17 @@
+services:
+  angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: angular17_ngrx_study
+
+    ports:
+      - "4201:4200"
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+    stdin_open: true
+    tty: true
