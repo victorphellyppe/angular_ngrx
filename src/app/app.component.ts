@@ -11,16 +11,18 @@ import { LivroService } from './livros/livro.service';
   templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
 
-  livros: Livro[] = [];
   livroService = inject(LivroService);
+  livros$ = this.livroService.obterLivrosApi();
   
-  ngOnInit(): void {
-    this.livros = this.livroService.obterLivros();
+  // ngOnInit(): void {
+  //   this.livros = this.livroService.obterLivros();
 
-  }
+  // }
+
+  
 
  
 }
